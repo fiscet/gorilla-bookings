@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: strapi
+    name: gorilla-bookings
     env: node
     plan: starter
     buildCommand: yarn install && yarn build
@@ -17,7 +17,7 @@ services:
         value: production
       - key: DATABASE_URL
         fromDatabase:
-          name: strapi
+          name: gorilla-bookings
           property: connectionString
       - key: JWT_SECRET
         generateValue: true
@@ -27,5 +27,5 @@ services:
         generateValue: true
 
 databases:
-  - name: strapi
+  - name: gorilla-bookings
     plan: starter
